@@ -14,11 +14,11 @@ class ProjectIdeaSerializer(ModelSerializer):
     def get_owner(self, obj):
         return obj.owner.username
 
-    class Meta:
-        model = ProjectIdea
-        fields = ["code", "title", "content", "rating", "level", "published", "owner"]
-
     def validate_rating(self, value):
         if value < 0 or value > 5:
             raise ValidationError("Rating must be between 0 and 5.")
         return value
+
+    class Meta:
+        model = ProjectIdea
+        fields = ["code", "title", "content", "rating", "level", "published", "owner"]
