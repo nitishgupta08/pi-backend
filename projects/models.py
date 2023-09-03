@@ -3,11 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-LEVEL_CHOICES = (
-    ("BEGINNER", "BEGINNER"),
-    ("INTERMEDIATE", "INTERMEDIATE"),
-    ("ADVANCED", "ADVANCED")
-)
+LEVEL_CHOICES = (("BEGINNER", "BEGINNER"), ("INTERMEDIATE", "INTERMEDIATE"), ("ADVANCED", "ADVANCED"))
 
 
 def get_sentinel_user():
@@ -43,10 +39,7 @@ class ProjectShowcase(models.Model):
 
 
 class URL(models.Model):
-    LINK_CHOICES = (
-        ("Github", "Github"),
-        ("Live Site", "Live Site")
-    )
+    LINK_CHOICES = (("Github", "Github"), ("Live Site", "Live Site"))
     project = models.ForeignKey(ProjectShowcase, on_delete=models.CASCADE)
     link = models.URLField()
     title = models.CharField(max_length=20, choices=LINK_CHOICES)

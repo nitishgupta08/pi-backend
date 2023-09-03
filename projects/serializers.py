@@ -5,4 +5,4 @@ from .models import ProjectIdea
 class ProjectIdeaSerializer(ModelSerializer):
     class Meta:
         model = ProjectIdea
-        fields = '__all__'
+        fields = "__all__"
