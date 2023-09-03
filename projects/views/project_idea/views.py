@@ -40,7 +40,6 @@ class ProjectIdeaView(APIView):
         serializer = ProjectIdeaSerializer(obj)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @silk_profile(name="Update Project Idea")
     def patch(self, request, **kwargs):
         try:
             obj = ProjectIdea.objects.get(code=kwargs["code"], owner=request.user)
