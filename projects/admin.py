@@ -5,8 +5,6 @@ from datetime import datetime
 from .models import Tag, ProjectShowcase, ProjectIdea, URL
 from django.utils import timezone
 
-# Register your models here.
-
 admin.site.register(Tag)
 
 

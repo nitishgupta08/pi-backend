@@ -3,5 +3,5 @@ from projects.views.project_idea.views import ProjectIdeaAllView, ProjectIdeaVie
 
 urlpatterns = [
     path("project-ideas/", ProjectIdeaAllView.as_view()),
-    path("project-ideas/<int:pk>/", ProjectIdeaView.as_view()),
+    path("project-ideas/<str:code>/", ProjectIdeaView.as_view()),
 ]
