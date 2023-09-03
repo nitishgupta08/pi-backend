@@ -16,5 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 
-urlpatterns = [path("admin/", admin.site.urls), path("api/users/", include("users.urls")), path("api/projects/", include("projects.urls")), path("api-auth/", include("rest_framework.urls", namespace="rest_framework"))]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("api/users/", include("users.urls")),
+    path("api/projects/", include("projects.urls")),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+]
+
+if settings.DEBUG:
+    urlpatterns += [path("silk/", include("silk.urls", namespace="silk"))]
